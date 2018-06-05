@@ -1,11 +1,16 @@
 # Task 2
 
 # Add negative sequence handling
-def fib(n)
+def fib(input)
+  # check input string numericness
+  tester = Integer(input) != nil rescue false
+  n = input.to_i if tester
+
+  exit if !( n.kind_of?(0.class) )
   exit if (n < -10000) || (n > 10000)
 
   return 0 if (n == 0)
-  return n if (n.abs == 1)
+  return 1 if (n.abs == 1)
 
   n = n.abs
 
@@ -21,4 +26,4 @@ def fib(n)
   end
 end
 
-puts fib(ARGV[0].to_i)
+puts fib(ARGV[0])
