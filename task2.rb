@@ -2,8 +2,9 @@
 
 # Functions
 def fib(input)
+  exit if input.nil?
   exit if !input.ascii_only?
-  
+
   # check input string numericness
   tester = Integer(input) != nil rescue false
   n = input.to_i if tester
