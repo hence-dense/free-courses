@@ -15,28 +15,15 @@ def fib(input)
   return 0 if (n == 0)
   return 1 if (n == 1) || (n == -1)
 
-  if n > 1
-    i = 0
-    j = 1
-    0.upto(n-2) do
-      buffer = i + j
-      i = j
-      j = buffer
-    end
-    return j
+  i = 0
+  j = 1
+  0.upto(n.abs-2) do
+    buffer = i + j
+    i = j
+    j = buffer
   end
-
-  if (n.negative?)
-    i = 0
-    j = 1
-    0.upto(n.abs-2) do
-      buffer = i + j
-      i = j
-      j = buffer
-    end
-    j = j*(-1) if n.even?
-    return j
-  end
+  j = j*(-1) if n.even? && n.negative?
+  return j
 end
 
 # Main

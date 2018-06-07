@@ -5,7 +5,7 @@ def char_divider(input)
   exit if !input.ascii_only?
 
   a = input.scan(/[aeiou]/i).join('')
-  b = input.scan(/[^aeiou0-9\W]/i).join('')
+  b = input.scan(/[^aeiou0-9_\W]/i).join('')
   c = input.scan(/[0-9]/).join('')
 
   puts "#{a} #{b} #{c}".strip
