@@ -2,15 +2,10 @@
 
 # Functions
 def fib(input)
-  exit if input.nil?
-  exit if !input.ascii_only?
-
+  return " " if ( input.nil? || !input.ascii_only? )
   # check input string numericness
-  tester = Integer(input) != nil rescue false
-  n = input.to_i if tester
-
-  exit if !( n.kind_of?(0.class) )
-  exit if (n < -10000) || (n > 10000)
+  n = input.to_i if ( Integer(input) rescue false )
+  return " " if ( !( n.kind_of?(Integer) ) || (n < -10000) || (n > 10000) )
 
   return 0 if (n == 0)
   return 1 if (n == 1) || (n == -1)
@@ -27,4 +22,6 @@ def fib(input)
 end
 
 # Main
-puts fib(ARGV[0])
+ARGV.each do |item|
+  puts fib(item)
+end
