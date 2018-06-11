@@ -2,10 +2,11 @@
 
 # Functions
 def fib(input)
-  return " " if ( input.nil? || !input.ascii_only? )
+  #return " " if ( input.nil? || !input.ascii_only? )
   # check input string numericness
-  n = input.to_i if ( Integer(input) rescue false )
-  return " " if ( !( n.kind_of?(Integer) ) || (n < -10000) || (n > 10000) )
+  #n = input.to_i if ( Integer(input) rescue false )
+  n = input.to_i
+  #return " " if ( !( n.kind_of?(Integer) ) || (n < -10000) || (n > 10000) )
 
   return 0 if (n == 0)
   return 1 if (n == 1) || (n == -1)
