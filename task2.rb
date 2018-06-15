@@ -1,9 +1,9 @@
 # Task 2
 
 def fib(input)
-  return " " if ( input.nil? || !input.ascii_only? || (input.match?(/[.,]/i)) )
+  return if ( input.nil? || !input.ascii_only? || (input.match?(/[.,]/i)) )
   num = input.to_i if ( Integer(input) rescue false )
-  return " " if ( !( num.kind_of?(Integer) ) || (num < -10000 || num > 10000) )
+  return if ( !( num.kind_of?(Integer) ) || (num < -10000 || num > 10000) )
 
   return 0 if (num == 0)
   return 1 if (num == 1) || (num == -1)
