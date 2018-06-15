@@ -11,11 +11,14 @@ def fib(n)
     a = n1 * (n2 * 2 - n1)
     b = n1 * n1 + n2 * n2
 
-    if n % 2 == 0
-      [a, b]
-    else
-      [b, a + b]
-    end
+    ( n % 2 == 0 ) ? [a, b] : [b, a + b]
   end
 end
-puts fib_wrap(ARGV[0].to_i)
+
+puts "#{fib_wrap(ARGV[0].to_i)}"
+
+# This algo time
+# 0.00015199999324977398
+# Naive algo time (old)
+# 0.00884900000528432429
+# )
